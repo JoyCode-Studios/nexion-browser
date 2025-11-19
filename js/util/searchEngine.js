@@ -8,9 +8,15 @@ var currentSearchEngine = {
   searchURL: '%s'
 }
 
-var defaultSearchEngine = 'DuckDuckGo'
+var defaultSearchEngine = 'JoySearch'
 
 var searchEngines = {
+  JoySearch: {
+  name: 'JoySearch',
+  searchURL: 'https://search.joycode.co.uk/results?q=%s&type=all',
+  suggestionsURL: '', // leave blank or omit if you don’t support suggestions yet
+  queryParam: 'q'
+},
   DuckDuckGo: {
     name: 'DuckDuckGo',
     searchURL: 'https://duckduckgo.com/?q=%s&t=min',

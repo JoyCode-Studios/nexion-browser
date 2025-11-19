@@ -434,7 +434,7 @@ function buildAppMenu (options = {}) {
         {
           label: l('appMenuTakeTour'),
           click: function () {
-            openTabInWindow('https://minbrowser.github.io/min/tour/')
+            openTabInWindow('https://www.joycode.co.uk/nexion/welcome')
           }
         },
         {

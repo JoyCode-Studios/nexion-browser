@@ -9,6 +9,5 @@ Built with Electron and modern web technologies, Nexion offers a clean interface
 
 - **Minimal UI** — distraction-free, responsive, and visually branded
 - **Privacy Defaults** — tracker blocking, strict cookie handling, and optional private mode
-- **Custom Search Engine** — easily swap JoySearch for, DuckDuckGo for Kagi or Searx.
+- **Custom Search Engine** — easily swap JoySearch for, DuckDuckGo Kagi or Searx
 - **Open Source** — licensed under Apache 2.0 for full commercial and creative freedom
-

@@ -85,7 +85,7 @@ const sessionRestore = {
         tasks.setSelected(tasks.add()) // create a new task
 
         var newTab = tasks.getSelected().tabs.add({
-            url: 'https://minbrowser.github.io/min/tour'
+            url: 'https://www.joycode.co.uk/nexion/welcome'
         })
         browserUI.addTab(newTab, {
          enterEditMode: false
