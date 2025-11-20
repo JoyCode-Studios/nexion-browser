@@ -3,7 +3,7 @@
   "productName": "Nexion",
   "author": "JoyCode Studios",
   "version": "1.0.0",
-  "description": "A lightweight, modular browser forked from Min — rebranded for clarity and creative control.",
+  "description": "A browser made for runtime clarity and creative control.",
   "electronVersion": "38.3.0",
   "main": "main.build.js",
   "standard": {
@@ -49,7 +49,7 @@
     "archiver": "^4.0.1",
     "browserify": "^16.5.1",
     "concurrently": "^5.2.0",
-    "decomment": "^0.9.0",
+    "decomment": "^0.9.5",
     "electron": "38.3.0",
     "electron-builder": "^24.13.3",
     "electron-installer-windows": "^3.0.0",
@@ -57,7 +57,7 @@
     "prebuild-install": "^7.0.1",
     "prettier": "^2.2.1",
     "snazzy": "^9.0.0",
-    "standard": "^17.1.2"
+    "standard": "^14.3.4"
   },
   "license": "Apache-2.0",
   "scripts": {
@@ -85,6 +85,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JoyCode-Studios/nexion-browser.git"
+    "url": "https://github.com/JoyCode-Studios/nexion-browser"
   }
 }
