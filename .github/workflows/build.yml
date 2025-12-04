@@ -1,4 +1,4 @@
-name: Build Debian Package
+name: Build Electron Debian Package
 
 on:
   push:
@@ -14,44 +14,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.x'
+          node-version: '20'
 
-      # 3. Install build tools
-      - name: Install build dependencies
+      # 3. Install dependencies
+      - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y build-essential dpkg-dev
+          npm install
 
-      # 4. Create Debian package skeleton
-      - name: Prepare package structure
+      # 4. Build Electron app into .deb
+      - name: Build Electron Debian package
         run: |
-          mkdir -p myapp-deb-amd64/DEBIAN
-          mkdir -p myapp-deb-amd64/usr/bin
-          echo '#!/usr/bin/env python3\nprint("Hello from Nexion!")' > myapp-deb-amd64/usr/bin/myapp
-          chmod +x myapp-deb-amd64/usr/bin/myapp
-          cat > myapp-deb-amd64/DEBIAN/control <<EOF
-          Package: myapp
-          Version: 0.1
-          Section: utils
-          Priority: optional
-          Architecture: amd64
-          Depends: python3
-          Maintainer: Your Name <you@example.com>
-          Description: My Python App
-           A simple Python application packaged as a Debian .deb.
-          EOF
+          npx electron-builder --linux deb
 
-      # 5. Build the .deb
-      - name: Build .deb package
-        run: dpkg-deb --build myapp-deb-amd64
-
-      # 6. Upload artifact
+      # 5. Upload artifact
       - name: Upload Debian package
         uses: actions/upload-artifact@v4
         with:
-          name: myapp-deb
-          path: myapp-deb-amd64.deb
+          name: nexion-deb
+          path: dist/*.deb
