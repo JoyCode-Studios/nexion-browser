@@ -1,0 +1,38 @@
+name: Build Electron Debian Package
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout your code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # 4. Build Electron app into .deb
+      - name: Build Electron Debian package
+        run: |
+          npx electron-builder --linux deb
+
+      # 5. Upload artifact
+      - name: Upload Debian package
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexion-deb
+          path: dist/*.deb
