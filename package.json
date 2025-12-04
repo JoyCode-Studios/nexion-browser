@@ -3,7 +3,7 @@
   "productName": "Nexion",
   "version": "1.0.0",
   "description": "A fast, minimal browser that protects your privacy",
-  "main": "main.build.js",
+  "main": "main.js",
   "author": "JoyCode Studios <ollie.fernandes@joycode.co.uk>",
   "license": "Apache-2.0",
   "scripts": {
