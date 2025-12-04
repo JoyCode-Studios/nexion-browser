@@ -11,26 +11,26 @@
     "start": "electron .",
     "build": "electron-builder"
   },
-"dependencies": {
-  "electron": "38.3.0",
-  "canvas": "^2.11.2",
-  "axios": "^1.7.7",
-  "express": "^4.21.1",
-  "ws": "^8.18.0",
-  "sqlite3": "^5.1.7",
-  "dotenv": "^16.4.5",
-  "cors": "^2.8.5",
-  "body-parser": "^1.20.2"
-},
-"devDependencies": {
-  "electron-builder": "^24.13.3",
-  "eslint": "^9.14.0",
-  "prettier": "^3.3.3",
-  "typescript": "^5.6.3",
-  "@types/node": "^20.11.30",
-  "@types/ws": "^8.5.10",
-  "@types/express": "^4.17.21"
-},
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "axios": "^1.7.7",
+    "express": "^4.21.1",
+    "ws": "^8.18.0",
+    "sqlite3": "^5.1.7",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "electron": "38.3.0",
+    "electron-builder": "^24.13.3",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "@types/node": "^20.11.30",
+    "@types/ws": "^8.5.10",
+    "@types/express": "^4.17.21"
+  },
   "build": {
     "appId": "com.joycode.nexion",
     "productName": "Nexion",
