@@ -12,7 +12,6 @@
     "build": "electron-builder"
   },
   "dependencies": {
-    "electron": "38.3.0",
     "canvas": "^2.11.2",
     "axios": "^1.7.7",
     "express": "^4.21.1",
