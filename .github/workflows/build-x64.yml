@@ -10,27 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout your code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. Install dependencies
-      - name: Install dependencies
+      # Install native build dependencies for canvas + sqlite3
+      - name: Install native build dependencies
         run: |
-          npm install
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            pkg-config \
+            python3 \
+            libcairo2-dev \
+            libpango1.0-dev \
+            libjpeg-dev \
+            libgif-dev \
+            librsvg2-dev \
+            libpixman-1-dev \
+            libsqlite3-dev
 
-      # 4. Build Electron app into .deb
-      - name: Build Electron Debian package
-        run: |
-          npx electron-builder --linux deb
+      - name: Install npm dependencies
+        run: npm install
 
-      # 5. Upload artifact
+      - name: Build Electron app into .deb
+        run: npx electron-builder --linux deb
+
       - name: Upload Debian package
         uses: actions/upload-artifact@v4
         with:
