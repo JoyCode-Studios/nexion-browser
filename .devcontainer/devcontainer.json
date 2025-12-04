@@ -1,0 +1,5 @@
+{
+  "name": "NexionOS Build",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "postCreateCommand": "sudo apt update && sudo apt install -y live-build"
+}
