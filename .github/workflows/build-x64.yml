@@ -38,7 +38,7 @@ jobs:
         run: npm install
 
       - name: Build Electron app into .deb
-        run: npx electron-builder --linux deb
+        run: npx electron-builder --linux deb --publish never
 
       - name: Upload Debian package
         uses: actions/upload-artifact@v4
